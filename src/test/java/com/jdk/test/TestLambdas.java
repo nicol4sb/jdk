@@ -1,10 +1,10 @@
-package com.test.jdk;
+package com.jdk.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-public class Lambdas {
+public class TestLambdas {
 
 	IAddable<String> stringAdder = (String s1, String s2) -> s1+s2;
 

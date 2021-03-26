@@ -1,4 +1,4 @@
-package com.test.jdk;
+package com.jdk.test;
 
 @FunctionalInterface
 public interface IAddable<T> {
