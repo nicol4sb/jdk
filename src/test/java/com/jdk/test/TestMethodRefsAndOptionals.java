@@ -7,6 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.BenchmarkMode;
+import org.openjdk.jmh.annotations.Mode;
 
 public class TestMethodRefsAndOptionals {
 
@@ -29,9 +32,18 @@ public class TestMethodRefsAndOptionals {
 	}
 
 	@Test
+	@Benchmark
+	@BenchmarkMode(Mode.AverageTime)
 	public void givenNull_whenThrowsErrorOnCreate_thenCorrect() {
 		String name = null;
 		assertThrows(NullPointerException.class, () -> Optional.of(name));
+	}
+
+	@Test
+	public void givenNotNullOptional_whenIsPresentCalled_thenConsumed() {
+
+		String name = null;
+		assertEquals("abc", Optional.ofNullable(name).orElse("abc"));
 	}
 
 }
