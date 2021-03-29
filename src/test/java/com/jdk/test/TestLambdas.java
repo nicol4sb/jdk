@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 
 public class TestLambdas {
 
-	IAddable<String> stringAdder = (String s1, String s2) -> s1+s2;
+	IAddable<String> stringAdder = (String s1, String s2) -> s1 + s2;
 
 	@Test
 	public void testAddable() {
-		assertEquals(stringAdder.add("A", "B"),"AB");
+		assertEquals(stringAdder.add("A", "B"), "AB");
 	}
-	
+
 }
